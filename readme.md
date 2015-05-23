@@ -77,7 +77,8 @@ First step - listing all time slots from 00:00 23:30.
     }
     </code>
 
-    Got a better solution:
+
+Got a better solution:
     <code>string[] dates = new string[]{};
         for (Integer i = 0, j = 0; i < 10; i++){
             dates.add(DateTime.newInstance(0L).addMinutes(30*i).format('HH:mm a'));}
