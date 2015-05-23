@@ -76,3 +76,11 @@ First step - listing all time slots from 00:00 23:30.
         }
     }
     
+    
+    Got a better solution:
+    string[] dates = new string[]{};
+        for (Integer i = 0, j = 0; i < 10; i++){
+            dates.add(DateTime.newInstance(0L).addMinutes(30*i).format('HH:mm a'));}
+system.debug(dates);
+
+Basically using Java date format parameters simplifies things a bit. Did some benchmarking using methods shown in Paul Battison videos and this last technique takes a tiny bit more CPU time. You could though instantiate only one dateTime variable, and then keep adding 30 minutes to it.
