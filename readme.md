@@ -58,7 +58,7 @@ First step - listing all time slots from 00:00 23:30.
             return options;
         }
     }
-    
+    <code>
     public SelectOption[] timeslot2 {
         get {
             SelectOption[] options = new SelectOption[]{};
@@ -75,12 +75,12 @@ First step - listing all time slots from 00:00 23:30.
             return options;
         }
     }
-    
+    </code>
     
     Got a better solution:
-    string[] dates = new string[]{};
+    <code>string[] dates = new string[]{};
         for (Integer i = 0, j = 0; i < 10; i++){
             dates.add(DateTime.newInstance(0L).addMinutes(30*i).format('HH:mm a'));}
-system.debug(dates);
+    system.debug(dates);</code>
 
 Basically using Java date format parameters simplifies things a bit. Did some benchmarking using methods shown in Paul Battison videos and this last technique takes a tiny bit more CPU time. You could though instantiate only one dateTime variable, and then keep adding 30 minutes to it.
